@@ -1008,14 +1008,3 @@ Router yang baik bukan hanya router yang dapat dikonfigurasi, tetapi juga router
 /tool torch interface=bridge-lan
 /interface monitor-traffic ether1
 ```
-
-## Lampiran C - Template Serah Terima dan Dokumentasi
-
-Pada saat menyerahkan jaringan kepada client atau kepada teknisi lain, sertakan dokumen ini agar tidak terdapat informasi yang hilang:
-
-- **Topologi:** Gambar jaringan, nama perangkat, dan alamat IP setiap interface.
-- **Rencana IP:** Tabel network, gateway, pool, dan alamat IP statis.
-- **Pengguna dan Kata Sandi:** Disimpan terpisah pada tempat yang aman, bukan pada dokumen yang dibagikan sembarangan. Beri tahu siapa yang memegang kata sandi master.
-- **Backup:** Berkas .backup dan .rsc terbaru, beserta tanggal dan versi RouterOS.
-- **Firewall dan Queue:** Daftar aturan penting beserta alasannya, serta queue dan limit per pengguna.
-- **Kontak:** Kontak ISP, kontak teknisi, dan kontak support MikroTik.
