@@ -2,17 +2,17 @@
 
 ## Daftar Isi
 
-- [Modul 1 - Introduction](#modul-1---introduction---implementasi-awal-router)
-- [Modul 2 - DHCP](#modul-2---dhcp---manajemen-ip-otomatis)
-- [Modul 3 - Bridging](#modul-3---bridging---menggabungkan-interface)
-- [Modul 4 - Routing](#modul-4---routing---menghubungkan-antar-jaringan)
-- [Modul 5 - Wireless](#modul-5---wireless---ap-station-dan-link-nirkabel)
-- [Modul 6 - Firewall](#modul-6---firewall---proteksi-nat-dan-fasttrack)
-- [Modul 7 - QoS](#modul-7---qos---pembagian-bandwidth-yang-adil)
-- [Modul 8 - Tunnels](#modul-8---tunnels---pppoe-pptp-dan-sstp)
-- [Modul 9 - Misc](#modul-9---misc---tools-monitoring-dan-troubleshooting)
+- [Modul 1. Introduction](#modul-1-introduction---implementasi-awal-router)
+- [Modul 2. DHCP](#modul-2-dhcp---manajemen-ip-otomatis)
+- [Modul 3. Bridging](#modul-3-bridging---menggabungkan-interface)
+- [Modul 4. Routing](#modul-4-routing---menghubungkan-antar-jaringan)
+- [Modul 5. Wireless](#modul-5-wireless---ap-station-dan-link-nirkabel)
+- [Modul 6. Firewall](#modul-6-firewall---proteksi-nat-dan-fasttrack)
+- [Modul 7. QoS](#modul-7-qos---pembagian-bandwidth-yang-adil)
+- [Modul 8. Tunnels](#modul-8-tunnels---pppoe-pptp-dan-sstp)
+- [Modul 9. Misc](#modul-9-misc---tools-monitoring-dan-troubleshooting)
 
-## Modul 1 - Introduction - Implementasi Awal Router
+## Modul 1. Introduction - Implementasi Awal Router
 
 ### 1.1 Tujuan Implementasi
 
@@ -109,7 +109,7 @@ Backup (.backup) menyimpan seluruh konfigurasi termasuk password dan sertifikat,
 - Verifikasi: Periksa `/ip firewall nat print`, pastikan masquerade tersedia dan hit count bertambah pada saat client melakukan penelusuran.
 - Operasi: Lakukan backup mingguan secara otomatis dengan scheduler atau secara manual setiap terdapat perubahan besar. Simpan dua copyan, yaitu pada router dan di luar router.
 
-> **Catatan Operasional Modul 1:** Silakan menuliskan komentar pada setiap aturan dan interface. Pada saat user membuat supout atau pada saat teknisi lain mengambil alih, komentar merupakan dokumentasi yang dapat menghemat waktu secara signifikan.
+> **Catatan Operasional  1:** Silakan menuliskan komentar pada setiap aturan dan interface. Pada saat user membuat supout atau pada saat teknisi lain mengambil alih, komentar merupakan dokumentasi yang dapat menghemat waktu secara signifikan.
 
 
 ### 1.8 Perbandingan RouterOS v6 dan v7
@@ -152,7 +152,7 @@ Backup (.backup) menyimpan seluruh konfigurasi termasuk password dan sertifikat,
 
 > **Catatan:** Pada RouterOS v7, sintaks dengan garis miring, contoh /ip/address, dan sintaks tanpa garis miring, contoh /ip address, keduanya dapat digunakan. Panduan ini menggunakan sintaks tanpa garis miring agar konsisten dengan ujian MTCNA, sedangkan contoh v7 menampilkan sintaks dengan garis miring untuk menunjukkan format baru yang umum digunakan pada dokumentasi v7.
 
-## Modul 2 - DHCP - Manajemen IP Otomatis
+## Modul 2. DHCP - Manajemen IP Otomatis
 
 ### 2.1 Tujuan Implementasi
 
@@ -247,7 +247,7 @@ Client tidak perlu mengatur alamat IP secara manual. Router membagikan alamat IP
 > **Catatan:** Migrasi DHCP dari v6 ke v7 umumnya dapat dilakukan dengan melakukan export dan import tanpa perubahan besar. Periksa kembali lease statis setelah migrasi karena alamat MAC harus sesuai.
 
 
-## Modul 3 - Bridging - Menggabungkan Interface
+## Modul 3. Bridging - Menggabungkan Interface
 
 ### 3.1 Tujuan Implementasi
 
@@ -331,7 +331,7 @@ Bridge membuat beberapa interface fisik (ethernet dan wireless) menjadi satu seg
 > **Catatan:** Apabila user melakukan migrasi bridge dengan VLAN, lakukan pengujian pada laboratorium terlebih dahulu. Kesalahan pada bridge VLAN filtering dapat menyebabkan seluruh trafik VLAN terputus.
 
 
-## Modul 4 - Routing - Menghubungkan Antar Jaringan
+## Modul 4. Routing - Menghubungkan Antar Jaringan
 
 ### 4.1 Tujuan Implementasi
 
@@ -420,7 +420,7 @@ Routing menentukan jalur paket dari satu network ke network lain. Dengan static 
 > **Catatan:** Untuk static route sederhana, konfigurasi v6 dan v7 hampir identik. Perbedaan utama muncul pada saat User menggunakan OSPF, BGP, VRF, atau route filter. Dalam hal tersebut, User wajib melakukan pengujian pada laboratorium sebelum migrasi.
 
 
-## Modul 5 - Wireless - AP, Station, dan Link Nirkabel
+## Modul 5. Wireless - AP, Station, dan Link Nirkabel
 
 ### 5.1 Tujuan Implementasi
 
@@ -526,7 +526,7 @@ Modul ini bertujuan untuk membangun jaringan wireless yang stabil dan aman, mula
 > **Catatan:** Perbedaan ini merupakan perbedaan yang paling signifikan antara v6 dan v7. Apabila user memigrasikan jaringan wireless, User harus menentukan terlebih dahulu apakah perangkat User menggunakan paket wireless atau wifi, kemudian menyusun ulang konfigurasi sesuai dengan paket tersebut.
 
 
-## Modul 6 - Firewall - Proteksi, NAT, dan FastTrack
+## Modul 6. Firewall - Proteksi, NAT, dan FastTrack
 
 ### 6.1 Tujuan Implementasi
 
@@ -651,7 +651,7 @@ Firewall merupakan modul yang paling penting untuk operasi. Tujuannya adalah mel
 
 > **Catatan:** Migrasi firewall dari v6 ke v7 umumnya berjalan dengan lancar. Yang perlu diperhatikan adalah urutan aturan dan interaksi FastTrack dengan queue. Lakukan pengujian akses WinBox dari IP administrator dan dari IP bukan administrator setelah migrasi.
 
-## Modul 7 - QoS - Pembagian Bandwidth yang Adil
+## Modul 7. QoS - Pembagian Bandwidth yang Adil
 
 ### 7.1 Tujuan Implementasi
 
@@ -737,7 +737,7 @@ Tanpa QoS, satu user yang melakukan downloadan besar dapat menyebabkan seluruh u
 
 > **Catatan:** Apabila user tidak mengalami bufferbloat, PCQ saja sudah memadai. Gunakan CAKE pada v7 hanya apabila user telah mengukur latensi dan memastikan bahwa bufferbloat merupakan penyebab utama.
 
-## Modul 8 - Tunnels - PPPoE, PPTP, dan SSTP
+## Modul 8. Tunnels - PPPoE, PPTP, dan SSTP
 
 ### 8.1 Tujuan Implementasi
 
@@ -849,7 +849,7 @@ Tunnel digunakan untuk dua hal, yaitu memberikan layanan internet berbasis login
 
 > **Catatan:** Apabila user membangun VPN baru pada RouterOS v7, gunakan WireGuard sebagai pilihan utama. Gunakan SSTP atau IPsec hanya apabila perangkat lawan tidak mendukung WireGuard. PPTP tidak disarankan untuk jaringan baru karena alasan keamanan.
 
-## Modul 9 - Misc - Tools, Monitoring, dan Troubleshooting
+## Modul 9. Misc - Tools, Monitoring, dan Troubleshooting
 
 ### 9.1 Tujuan Implementasi
 
